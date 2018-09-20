@@ -8,5 +8,7 @@ ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
 include vendor/mdroid/config/BoardConfigQcom.mk
 endif
 
+include vendor/mdroid/config/BoardConfigKernel.mk
+
 # Disable qmi EAP-SIM security
 DISABLE_EAP_PROXY := true
