@@ -1,4 +1,4 @@
-MDROID_REVISION := 1.0
+MDROID_REVISION := 2.0
 
 ifndef MDROID_BUILDTYPE
   MDROID_BUILDTYPE := UNOFFICIAL
@@ -28,7 +28,7 @@ ifeq ($(MDROID_BUILDTYPE), Official)
 	else ifeq ($(MDROID_BUILDTYPE), Beta)
 	    MDROID_TAG := Beta
 	else ifeq ($(MDROID_BUILDTYPE), Snapshot)
-	    MDROID_TAG := Test
+	    MDROID_TAG := Snapshot
 	else
 	    MDROID_TAG := Unofficial
 endif
