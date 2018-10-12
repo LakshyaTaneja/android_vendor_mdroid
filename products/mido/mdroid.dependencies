@@ -1,0 +1,8 @@
+[
+    {
+        "remote":       "github",
+        "repository":   "TheScarastic/proprietary_vendor_xiaomi",
+        "target_path":  "vendor/xiaomi",
+        "revision":     "lineage-16.0"
+    }
+]
