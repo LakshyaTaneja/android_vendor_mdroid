@@ -1,27 +1,36 @@
 [
     {
+        "remote":       "mdroidp",
         "repository":   "android_device_xiaomi_mido",
-        "target_path":  "device/xiaomi/mido"
+        "target_path":  "device/xiaomi/mido",
+        "revision":     "pie"
     },
     {
+        "remote":       "mdroidp",
         "repository":   "proprietary_vendor_xiaomi",
-        "target_path":  "vendor/xiaomi"
+        "target_path":  "vendor/xiaomi",
+        "revision":     "pie"
     },
     {
+        "remote":       "mdroidp",
         "repository":   "android_kernel_xiaomi_msm8953",
-        "target_path":  "kernel/xiaomi/msm8953" 
+        "target_path":  "kernel/xiaomi/msm8953", 
+        "revision":     "pie"
     },
     {
+        "remote":       "mdroidp",
         "repository":   "android_hardware_qcom_audio-caf",
         "target_path":  "hardware/qcom/audio-caf/msm8996",
         "revision":     "pie-8996" 
     },
     {
+        "remote":       "mdroidp",
         "repository":   "android_hardware_qcom_media-caf",
         "target_path":  "hardware/qcom/media-caf/msm8996",
         "revision":     "pie-8996"
     },
     {
+        "remote":       "mdroidp",
         "repository":   "android_hardware_qcom_display-caf",
         "target_path":  "hardware/qcom/display-caf/msm8996",
         "revision":     "pie-8996"
