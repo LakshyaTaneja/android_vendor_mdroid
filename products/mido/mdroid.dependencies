@@ -1,8 +1,29 @@
 [
     {
-        "remote":       "github",
-        "repository":   "TheScarastic/proprietary_vendor_xiaomi",
-        "target_path":  "vendor/xiaomi",
-        "revision":     "lineage-16.0"
+        "repository":   "android_device_xiaomi_mido",
+        "target_path":  "device/xiaomi/mido"
+    },
+    {
+        "repository":   "proprietary_vendor_xiaomi",
+        "target_path":  "vendor/xiaomi"
+    },
+    {
+        "repository":   "android_kernel_xiaomi_msm8953",
+        "target_path":  "kernel/xiaomi/msm8953" 
+    },
+    {
+        "repository":   "android_hardware_qcom_audio-caf",
+        "target_path":  "hardware/qcom/audio-caf",
+        "revision":     "pie-8996" 
+    },
+    {
+        "repository":   "android_hardware_qcom_media-caf",
+        "target_path":  "hardware/qcom/media-caf",
+        "revision":     "pie-8996"
+    },
+    {
+        "repository":   "android_hardware_qcom_display-caf",
+        "target_path":  "hardware/qcom/display-caf",
+        "revision":     "pie-8996"
     }
 ]
