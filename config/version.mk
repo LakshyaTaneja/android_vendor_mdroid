@@ -1,26 +1,3 @@
-MDROID_REVISION := 2.0
-
-ifndef MDROID_BUILDTYPE
-  MDROID_BUILDTYPE := UNOFFICIAL
-endif
-
-TARGET_PRODUCT_SHORT := $(TARGET_PRODUCT)
-TARGET_PRODUCT_SHORT := $(subst mdroid_,,$(TARGET_PRODUCT_SHORT))
-
-ifeq ($(MDROID_BUILDTYPE), UNOFFICIAL)
-    MDROID_VERSION := $(MDROID_REVISION)-$(MDROID_BUILDTYPE)-$(TARGET_PRODUCT_SHORT)-$(shell date +"%Y%m%d-%H%M%S")
-else
-    MDROID_VERSION := $(MDROID_REVISION)-$(MDROID_BUILDTYPE)-$(TARGET_PRODUCT_SHORT)-$(shell date +"%Y%m%d")
-endif
-
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID="$(BUILD_ID)-$(shell whoami)@$(shell hostname)"
-
-PRODUCT_GENERIC_PROPERTIES += \
-    BUILD_DISPLAY_ID=$(BUILD_ID) \
-    ro.mdroid.version=$(MDROID_VERSION) \
-    ro.modversion=MDROIDROM-$(MDROID_VERSION) \
-    ro.mdroid.buildtype=$(MDROID_BUILDTYPE)
-
 ifeq ($(MDROID_BUILDTYPE), Official)
 	    MDROID_TAG := Official
 	else ifeq ($(MDROID_BUILDTYPE), Alpha)
@@ -30,9 +7,16 @@ ifeq ($(MDROID_BUILDTYPE), Official)
 	else ifeq ($(MDROID_BUILDTYPE), Snapshot)
 	    MDROID_TAG := Snapshot
 	else
-	    MDROID_TAG := Unofficial
+	    MDROID_TAG := Homemade
 endif
 
+# Include versioning information
+# Format: AndroidVersion.Major.Maintenance (-TAG)
+export MDROID_VERSION := MW-2.0
 
-
+export ROM_VERSION := $(MDROID_VERSION)-$(MDROID_BUILDTYPE)-$(shell date -u +%Y%m%d)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.modversion=$(ROM_VERSION) \
+    ro.mdroid.version=$(MDROID_VERSION) \
+    ro.mdroid.buildtype=$(MDROID_BUILDTYPE)
 
