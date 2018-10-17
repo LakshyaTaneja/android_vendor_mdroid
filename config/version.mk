@@ -1,3 +1,7 @@
+ifndef MDROID_BUILDTYPE
+  MDROID_BUILDTYPE := Homemade
+endif
+
 ifeq ($(MDROID_BUILDTYPE), Official)
 	    MDROID_TAG := Official
 	else ifeq ($(MDROID_BUILDTYPE), Alpha)
