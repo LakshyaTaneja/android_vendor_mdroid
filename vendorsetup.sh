@@ -6,3 +6,8 @@ add_lunch_combo mdroid_santoni-userdebug
 add_lunch_combo mdroid_potter-userdebug
 add_lunch_combo mdroid_vince-userdebug
 add_lunch_combo mdroid_wt88047-userdebug
+
+# SDClang Environment Variables
+export SDCLANG_AE_CONFIG=vendor/mdroid/sdclang/sdclangAE.json
+export SDCLANG_CONFIG=vendor/mdroid/sdclang/sdclang.json
+export SDCLANG_SA_ENABLED=false

@@ -272,3 +272,15 @@ PRODUCT_COPY_FILES += \
     vendor/mdroid/prebuilt/bin/clean_cache.sh:system/bin/clean_cache.sh
 
 $(call prepend-product-if-exists, vendor/extra/product.mk)
+
+ifneq ($(HOST_OS),linux)
+ifneq ($(sdclang_already_warned),true)
+$(warning **********************************************)
+$(warning * SDCLANG is not supported on non-linux hosts.)
+$(warning **********************************************)
+sdclang_already_warned := true
+endif
+else
+# include definitions for SDCLANG
+include vendor/mdroid/sdclang/sdclang.mk
+endif
