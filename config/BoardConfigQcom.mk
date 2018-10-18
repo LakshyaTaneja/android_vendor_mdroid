@@ -1,6 +1,5 @@
 # Bring in Qualcomm helper macros
 include vendor/mdroid/build/core/qcom_utils.mk
-
 B_FAMILY := msm8226 msm8610 msm8974
 B64_FAMILY := msm8992 msm8994
 BR_FAMILY := msm8909 msm8916
@@ -58,33 +57,18 @@ ifeq ($(call is-board-platform-in-list, $(BR_FAMILY)),true)
     MSM_VIDC_TARGET_LIST := $(BR_FAMILY)
     QCOM_HARDWARE_VARIANT := msm8916
 else
-ifeq ($(call is-board-platform-in-list, $(UM_3_18_FAMILY)),true)
-    MSM_VIDC_TARGET_LIST := $(UM_3_18_FAMILY)
-    QCOM_HARDWARE_VARIANT := msm8996
-else
-ifeq ($(call is-board-platform-in-list, $(UM_4_4_FAMILY)),true)
-    MSM_VIDC_TARGET_LIST := $(UM_4_4_FAMILY)
-    QCOM_HARDWARE_VARIANT := msm8998
-else
-ifeq ($(call is-board-platform-in-list, $(UM_4_9_FAMILY)),true)
-    MSM_VIDC_TARGET_LIST := $(UM_4_9_FAMILY)
-    QCOM_HARDWARE_VARIANT := sdm845
-else
     MSM_VIDC_TARGET_LIST := $(TARGET_BOARD_PLATFORM)
     QCOM_HARDWARE_VARIANT := $(TARGET_BOARD_PLATFORM)
 endif
 endif
 endif
-endif
-endif
-endif
 
 PRODUCT_SOONG_NAMESPACES += \
-    hardware/qcom/audio-caf/$(QCOM_HARDWARE_VARIANT) \
-    hardware/qcom/display-caf/$(QCOM_HARDWARE_VARIANT) \
-    hardware/qcom/media-caf/$(QCOM_HARDWARE_VARIANT)
+    hardware/qcom/audio/$(QCOM_HARDWARE_VARIANT) \
+    hardware/qcom/display/$(QCOM_HARDWARE_VARIANT) \
+    hardware/qcom/media/$(QCOM_HARDWARE_VARIANT)
 
 # QCOM HW crypto
 ifeq ($(TARGET_HW_DISK_ENCRYPTION),true)
-    TARGET_CRYPTFS_HW_PATH ?= vendor/qcom/opensource/cryptfs_hw
+    TARGET_CRYPTFS_HW_PATH ?= vendor/qcom/opensource/commonsys/cryptfs_hw
 endif
