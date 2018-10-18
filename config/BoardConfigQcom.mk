@@ -57,8 +57,23 @@ ifeq ($(call is-board-platform-in-list, $(BR_FAMILY)),true)
     MSM_VIDC_TARGET_LIST := $(BR_FAMILY)
     QCOM_HARDWARE_VARIANT := msm8916
 else
+ifeq ($(call is-board-platform-in-list, $(UM_3_18_FAMILY)),true)
+    MSM_VIDC_TARGET_LIST := $(UM_3_18_FAMILY)
+    QCOM_HARDWARE_VARIANT := msm8996
+else
+ifeq ($(call is-board-platform-in-list, $(UM_4_4_FAMILY)),true)
+    MSM_VIDC_TARGET_LIST := $(UM_4_4_FAMILY)
+    QCOM_HARDWARE_VARIANT := msm8998
+else
+ifeq ($(call is-board-platform-in-list, $(UM_4_9_FAMILY)),true)
+    MSM_VIDC_TARGET_LIST := $(UM_4_9_FAMILY)
+    QCOM_HARDWARE_VARIANT := sdm845
+else
     MSM_VIDC_TARGET_LIST := $(TARGET_BOARD_PLATFORM)
     QCOM_HARDWARE_VARIANT := $(TARGET_BOARD_PLATFORM)
+endif
+endif
+endif
 endif
 endif
 endif
