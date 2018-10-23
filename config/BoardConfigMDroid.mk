@@ -10,5 +10,7 @@ endif
 
 include vendor/mdroid/config/BoardConfigKernel.mk
 
+include vendor/mdroid/config/BoardConfigSoong.mk
+
 # Disable qmi EAP-SIM security
 DISABLE_EAP_PROXY := true
